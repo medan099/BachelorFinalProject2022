@@ -1,0 +1,62 @@
+<div class="bg-section"style="background-image: url(assets/page-title-background.jpg)">
+    <h2 class="page-title">Actualités</h2>
+  </div>
+  <section class="home-blog bg-sand">
+    <div class="container-fluid">
+		<!-- section title -->
+		<div class="row ">
+			<div class="col-xl-5 col-lg-6 col-md-8">
+				<div class="section-title ">
+					<h2>Actualités</h2>
+					<p>Découvrez nos dernières actualités.</p>
+				</div>
+			</div>
+		</div>
+		<!-- section title ends -->
+    <!-- BLOG POSTS - START -->
+		<div class="row ">
+			<div class="col-sm-8" >
+        <div *ngFor="let actualite of actualites">
+          <div class="media blog-media">
+            <a href="blog-post-left-sidebar.html"><img class="d-flex" [src]="sanitize(actualite.imageUrl)" alt="Generic placeholder image"></a>
+            <div class="circle">
+              <h5 class="day">{{actualite.jour}}</h5>
+              <span class="month">{{actualite.mois}}</span>
+            </div>
+            <div class="media-body">
+              <a href=""><h5 class="mt-0">{{actualite.titre}}</h5></a>
+              {{actualite.details}}
+            </div>
+          </div>
+			</div>
+    </div>
+		   <!-- BLOG POSTS - END -->
+       <!-- SIDEBAR - START -->
+       <div class="col-sm-4">
+        <div class="sidebar">
+              <h3>Catégories</h3>
+              <div class="box categories">
+                  <ul class="list-unstyled">
+                      <li><a href="#">Actualités</a></li>
+                      <li><a href="#">Articles de presse</a></li>
+                      <li><a href="#">Publications</a></li>
+                  </ul>
+              </div>
+              <h3>Articles récents</h3>
+              <div class="box posts">
+                  <ul class="list-unstyled">
+                      <li><i class="fa fa-chevron-right"></i><a href="#">Immersion au sein de Mezzo</a><div>27/02/2022</div></li>
+                      <li><i class="fa fa-chevron-right"></i><a href="#">Avec Mezzo, Bruneau est dans les starting-blocks pour l’élection Service Client de l’Année. Témoignage…</a><div>18/02/2021</div></li>
+                      <li><i class="fa fa-chevron-right"></i><a href="#">10 collaborateurs de Mezzo au départ du marathon de Bordeaux !</a><div>05/02/2020</div></li>
+                      <li><i class="fa fa-chevron-right"></i><a href="#">Bruneau opte pour la cocréation de la relation client avec un prestataire</a><div>05/02/2020</div></li>
+                      <li><i class="fa fa-chevron-right"></i><a href="#">Mezzo au CRM de Cannes</a><div>05/02/2019</div></li>
+                  </ul>
+              </div>
+          </div>
+      </div>
+      <!-- SIDEBAR - END -->
+		</div>
+	</div>
+</section>
+    
+    

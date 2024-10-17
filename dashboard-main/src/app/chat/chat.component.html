@@ -1,0 +1,103 @@
+<main class="content">
+    <div class="container p-0">
+	
+		<h1 class="h3 mb-3">Messages</h1>
+		<div class="card">
+			<div class="row g-0">
+				<div class="col-12 col-lg-5 col-xl-3 border-right">
+
+					<div class="px-4 d-none d-md-block">
+						<div class="d-flex align-items-center">
+							<div class="flex-grow-1">
+								<input type="text" class="form-control my-3" placeholder="Search..." (ngModelChange)="searchEmployees(key.value)" #key="ngModel" ngModel>
+							</div>
+						</div>
+					</div>
+					<div *ngFor="let employee of employees">
+
+                    <a  href="#" class="list-group-item list-group-item-action border-0">
+						<div class="d-flex align-items-start">
+							<img src={{employee.imageUrl}} class="rounded-circle mr-1" alt="Fiona Green" width="40" height="40">
+							<div class="flex-grow-1 ml-3">
+								{{employee.prenom}}	{{employee.nom}}
+							</div>
+						</div>
+					</a>
+					</div>
+                    
+
+					<hr class="d-block d-lg-none mt-1 mb-0">
+				</div>
+				<div class="col-12 col-lg-7 col-xl-9">
+					<div class="py-2 px-2  d-none d-lg-block">
+						<div class="d-flex align-items-center title">
+							<div class="position-relative">
+								<img src="data:image/jpeg;base64,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" class="rounded-circle mr-1" alt="Sharon Lessman" width="40" height="40">
+							</div>
+					<div class="flex-grow-1 pl-3 ">
+						<strong >Groupe des employés de Mezzo </strong>
+					</div>
+				</div>
+			</div>
+
+					<div  class="position-relative">
+						<div   class="chat-messages p-4">
+
+							<div   *ngFor="let chatMessage of webSocketService.chatMessages"  >
+                            <div *ngIf="webSocketService.chatMessages.indexOf(chatMessage)%2==1" class="chat-message-left pb-4" >
+								<div  class="chat-message-right pb-4" >
+                                  
+									
+								</div>
+								<div class="flex-shrink-1 bg-light rounded py-2 px-3 mr-3">
+									<div class="font-weight-bold mb-1">{{chatMessage.user}}</div>
+									{{chatMessage.message}}
+								</div>
+                                </div>
+
+                                <div *ngIf="webSocketService.chatMessages.indexOf(chatMessage)%2==0" class="chat-message-right pb-4" >
+                                    <div  class="chat-message-left pb-4" >
+                                      
+                                        
+                                    </div>
+                                    <div class="flex-shrink-1 bg-light rounded py-2 px-3 mr-3">
+                                        <div class="font-weight-bold mb-1">{{chatMessage.user}}</div>
+                                        {{chatMessage.message}}
+                                    </div>
+                                    </div>
+                                
+							</div>
+                      
+
+						</div>
+					</div>
+					<!-- First dropdown for governorates -->
+					<select [(ngModel)]="selectedGovernorate" (change)="onGovernorateChange()">
+						<option *ngFor="let governorate of governorates" [value]="governorate">{{ governorate }}</option>
+					</select>
+					
+					<!-- Second dropdown for regions -->
+					<select *ngIf="regions.length > 0">
+						<option *ngFor="let region of regions" [value]="region">{{ region }}</option>
+					</select>
+
+
+
+
+
+					
+  
+
+                 <form (ngSubmit)="sendMessage(sendForm)" #sendForm="ngForm">
+					<div class="flex-grow-0 py-3 px-4 border-top">
+						<div class="input-group">
+							<input type="text" class="form-control" name="message" id="input-message" placeholder="Ecrire un message ici" ngModel>
+							<button class="btn btn-primary">Send</button>
+						</div>
+					</div>
+                </form>    
+				</div>
+			</div>
+		</div>
+	</div>
+</main>

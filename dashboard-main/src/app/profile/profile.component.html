@@ -1,0 +1,59 @@
+<div class="container">
+   <div class="row gutters">
+   <div class="col-xl-3 col-lg-3 col-md-12 col-sm-12 col-12">
+   <div class="card h-100">
+      <div class="card-body">
+        <div class="account-settings">
+          <div class="user-profile">
+            <div class="user-avatar">
+                  <img src={{user?.imageUrl}} alt="photo" >
+               </div>
+            </div>
+            <ul class="social-links list-inline ">
+              <li>
+                  <a title="" data-placement="top" data-toggle="tooltip" class="tooltips" href="" data-original-title="Facebook"><i class="fa fa-facebook"></i></a>
+              </li>
+              <li>
+                  <a title="" data-placement="top" data-toggle="tooltip" class="tooltips" href="" data-original-title="Twitter"><i class="fa fa-twitter"></i></a>
+              </li>
+              <li>
+                  <a title="" data-placement="top" data-toggle="tooltip" class="tooltips" href="" data-original-title="Skype"><i class="fa fa-skype"></i></a>
+              </li>
+          </ul>
+            <div class="about">
+               <h5>A propos</h5>
+               <p>Je suis {{user?.prenom}}.<br> L'un des  employés sur lesquels Mezzo compte le plus .</p>
+            </div>
+         </div>
+      </div>
+   </div>
+   </div>
+   <div class="col-xl-9 col-lg-9 col-md-12 col-sm-12 col-12">
+<div class="profile">
+   <main>
+     <dl>
+       <dt>Prénom</dt>
+         <dd>{{user?.nom}}</dd>
+       <dt>Nom</dt>
+         <dd>{{user?.prenom}}</dd>
+       <dt>Sexe</dt>
+         <dd>{{user?.sexe}}</dd>
+       <dt>Age</dt>
+         <dd>{{user?.username}}</dd>
+       <dt>Poste</dt>
+         <dd>{{user?.poste}}</dd>
+       <dt>Email</dt>
+         <dd>{{user?.email}}</dd>
+         <dt>Téléphone</dt>
+         <dd>{{user?.telephone}}</dd>
+         <dt>Adresse</dt>
+         <dd>{{user?.adresse}}</dd>
+     </dl>
+   </main>
+ 
+ </div>
+</div>
+</div>
+</div>
+<!-- end profile -->
+ 

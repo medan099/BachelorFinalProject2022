@@ -1,0 +1,210 @@
+*{
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+  }
+  /* Title section */
+    
+  .bg-section{
+    background-size: cover;
+    height: 50vh;
+    min-height: 80px;
+  }
+  .bg-section h2{
+    padding-top: 9% ;
+    font-weight: 600;
+    font-size: 3rem;
+    max-width: 20ch;
+    color:#ffffff;
+    margin: auto ;
+    margin-left: 4%;
+  }
+
+  .container-fluid{
+    background:#f5f5f5;
+    padding: 7% 5%;
+}
+.section {
+    padding-bottom: 3%;
+    position: relative;
+    background:#f5f5f5;
+    position: relative;
+}
+.section
+.section-candidature{
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 50vh;
+  min-height: 80px;
+}
+.section-candidature h3{
+  padding-top: 6%;
+  font-weight: 600;
+  font-size: 2rem;
+  max-width: 20ch;
+  color:#ffffff;
+  margin: auto ;
+  margin-left: 6%;
+  margin-bottom: 1%;
+}
+.section-candidature p{
+  font-size: 1rem;
+  color:rgba(255, 255, 255, 0.8);
+  padding-top: 0 ;
+  margin-bottom: 5%;
+  margin-left: 6%;
+}
+.section-candidature button{
+  margin-top: 10%;
+  margin-left: 8%;
+  width: 70%;
+  font-weight: 600;
+  font-size: 1.2rem;
+  color: #36486b;
+}
+.section-candidature button:hover{
+  background-color:#36486b;
+  color: #fff;
+}
+
+/* Blog 
+---------------------*/
+.blog-grid {
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+.blog-grid .blog-img {
+  position: relative;
+  border-radius: 5px;
+  overflow: hidden;
+}
+.blog-grid .blog-img img{
+    max-height: 200px;
+}
+.blog-grid .blog-info {
+  box-shadow: 0 0 30px rgba(31, 45, 61, 0.125);
+  border-radius: 5px;
+  background: #ffffff;
+  padding: 20px;
+  margin: -60px 20px 0;
+  position: relative;
+  min-height: 25rem;
+}
+.blog-grid .blog-info h5 {
+  font-size: 22px;
+  font-weight: 600;
+  margin: 0 0 10px;
+}
+.blog-grid .blog-info h5 a {
+  color:#20247b;
+}
+
+.blog-grid .blog-info p {
+    margin: 3% 0%;
+    font-size: 15px;
+    
+}
+
+.blog-grid .blog-info .btn-bar {
+  margin-top: 20px;
+  text-align: right;
+}
+.blog-grid .blog-info .badge{
+  padding: 2px 21px;
+  font-size: 13px;
+  color: #fff;
+  background: #002347;
+  text-transform: uppercase;
+}
+
+
+/* Form */
+
+.input-box{
+  position: relative;
+  margin-bottom: 4%;
+}
+
+.input-box i {
+  position: absolute;
+  right: 13px;
+  top:15px;
+  color:#ced4da;
+
+}
+
+.form-control{
+
+  height: 50px;
+  background-color:#eeeeee69;
+}
+
+.form-control:focus{
+  background-color: #eeeeee69;
+  box-shadow: none;
+  border-color: #eee;
+}
+
+
+/* Section Title */
+.section-title h1 {
+    font-size: 44px;
+    font-weight: 500;
+    margin-top: 0;
+    position: relative;
+    text-transform: capitalize;
+    margin-bottom: 16px;
+    color: #20247b;
+}
+.section-title h2 {
+    font-size: 35px;
+    font-weight: 500;
+    margin-top: 0;
+    position: relative;
+    text-transform: capitalize;
+    margin-bottom: 5px;
+    color: #20247b;
+}
+.section-title p {
+    padding: 0 ;
+    width: 100%;
+    margin: auto;
+    letter-spacing: 1px;
+}
+.section-title {
+    margin-bottom: 60px;
+}
+.text-center {
+    text-align: center!important;
+}
+/* candidature button */
+.btn-contact-bg {
+  border-radius: 30px;
+  color: #36486b;
+  outline: medium none !important;
+  padding: 15px 27px;
+  text-transform: capitalize;
+  -webkit-transition: all 0.3s ease 0s;
+  -o-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s;
+  background: #ffffff;
+  font-family: 'poppins', sans-serif;
+  cursor: pointer;
+  width: 100%;
+}
+
+.btn-contact-bg:hover,
+.btn-contact-bg:focus {
+  background: #232434;
+  color: #fff;
+}
+
+
+
+
+
+
+
+
+
+
+

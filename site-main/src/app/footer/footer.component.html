@@ -1,0 +1,89 @@
+<div class="container-fluid" >
+    <div class="row">
+        <div class="container-newsletter text-center">  
+                <h2>Suivez-nous</h2>
+                <p>Recevez chaque semaine nos meilleurs articles !</p>
+                <div class="content">    
+                    <div class="alert alert-success"  *ngIf='isSubmitted' >{{successMessage}}</div>
+                  <form  *ngIf='!isSubmitted' class="subscription" #f="ngForm" (ngSubmit)=" onSubmit(f)" >
+                    <input class="add-email" type="text" name="value" id="value" ngModel placeholder="Votre adresse email">
+                    <button class="submit-email" type="submit">
+                      <span class="before-submit">S'abonner</span> 
+                     </button>
+                  </form>
+                </div>
+                </div>   
+        </div>
+        </div>
+
+
+        
+    
+    
+    <footer class="footer">
+           
+      
+      <div class="container">
+       
+          <div class="row">
+    
+    
+              <div class="col-lg-3 col-md-6 col-sm-6">
+                  <div class="footer-about">
+                      <div class="footer-logo">
+                          <a href="#"><img src="assets/Logo_Mezzo_BW.png" alt=""></a>
+                      </div>
+                      <p>Mezzo oriente l’ensemble de ses énergies à l’amélioration continue de ses engagements de qualité et d’innovation participative.</p>
+                      <a href="#"><img src="#" alt=""></a>
+                  </div>
+              </div>
+    
+              <div class="col-lg-3 offset-lg-1 col-md-3 col-sm-6">
+                  <div class="footer-widget">
+                      <h6>Contact</h6>
+                      <ul>
+                        <li><a href="#"><i class="fa-solid fa-location-dot"></i> 1 ter Avenue de la Marne<br> 59290 Wasquehal</a></li>
+                        <li><a href="#"><i class="fa-solid fa-phone"></i> +33(0)3 59 30 53 00</a></li>
+                        <li><a href="#"><i class="fa-solid fa-envelope"></i> relation@somezzo.com</a></li>
+                    </ul>
+                  </div>
+              </div>
+    
+              <div class="col-lg-2  col-md-3 col-sm-6">
+                  <div class="footer-widget">
+                      <h6>Navigation</h6>
+                      <ul>
+                          <li><a href="#"[routerLink]="['histoire']" routerLinkActive="active" role="button" >MEZZO</a></li>
+                          <li><a href="#" [routerLink]="['expertise']" routerLinkActive="active" role="button">Nos Pôles d'Expertise</a></li>
+                          <li><a href="#" [routerLink]="['services']" routerLinkActive="active" role="button">Vos Besoins</a></li>
+                          <li><a href="#" [routerLink]="['actualite']" routerLinkActive="active" role="button">Actualités</a></li>
+                          <li><a href="#" [routerLink]="['contact']" routerLinkActive="active" role="button">Nous contacter</a></li>
+                    
+    
+                      </ul>
+                  </div>
+              </div>
+    
+              <div class="col-lg-2  offset-lg-1 col-md-6 col-sm-6">
+                  <div class="footer-widget">
+                     
+                    <h6>Suivez-nous</h6>
+                    <ul class="footer-icons">
+                        <li><a href="#"><i class="fa-brands fa-facebook footer-icon"></i></a></li>
+                        <li><a href="#"><i class="fa-brands fa-linkedin-in footer-icon"></i></a></li>
+                        <li><a href="#"><i class="fa-brands fa-google-plus footer-icon"></i></a></li>
+                        <li><a href="#"><i class="fa-brands fa-twitter footer-icon"></i></a></li>
+                      </ul>
+                  </div>
+              </div>
+          </div>    
+      </div>
+    </footer>
+    <div class="container-fluid">
+    <div class="row">
+            <div class="footer-copyright-text text-center">
+                <p>Copyright 2022 &copy; MEZZO | Tous droits réservés | Politique de confidentialité | Mentions légales </p>
+            </div>
+        </div>
+    </div>
+    

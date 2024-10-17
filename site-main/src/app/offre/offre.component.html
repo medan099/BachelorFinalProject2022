@@ -1,0 +1,71 @@
+<div class="bg-section"style="background-image: url(assets/page-title-background.jpg)">
+    <h2 class="page-title">Intégrer Mezzo</h2>
+  </div>
+  <div class="container-fluid">
+    <div class="row">
+         <div class="col-lg-10 mx-auto mb-4">
+            <div class="section-title text-center ">
+                <h1 class="top-c-sep">Rejoignez-nous</h1>
+                <p>Vous cherchez à construire une carrière professionnelle en perpétuelle évolution tout en profitant d'un cadre de travail agréable et d'un salaire évolutif ?<br> Que vous soyez débutants ou expérimentés, Mezzo vous offre l'opportunité de trouver le poste qui correspond le mieux à votre profil.
+                   <br> Consultez nos offres d'emploi et déposez votre candidature en ligne.</p>
+            </div>
+        </div>
+    </div>
+  </div>
+  <section class="section gray-bg" id="blog">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-7 text-center">
+                <div class="section-title">
+                    <h2>Nos offres d'emploi</h2>
+                </div>
+            </div>
+        </div>
+        <div class="row d-flex justify-content-center ">
+            <div class="col-md-6">
+                  <div class="input-box">
+                    <input type="text" placeholder="Titre du poste" class="form-control" (ngModelChange)="searchOffresTitre(key.value)" #key="ngModel" ngModel  name="key" id="searchName">
+                    <i class="fa fa-search"></i>                    
+                  </div>
+                
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-4" *ngFor="let offre of offres" >
+                <div class="blog-grid">
+                    <div class="blog-img">
+                        <a href="#">
+                            <img src="https://media-exp1.licdn.com/dms/image/C4E22AQG9-Y-OsBpeMQ/feedshare-shrink_800/0/1647852098630?e=2147483647&v=beta&t=NRYSKwkSTQ8UvgWDOJt0rnPJTCXpj6ncGygi4bxuMas" title="" alt="">
+                        </a>
+                    </div>
+                    <div class="blog-info">
+                        <h5><a href="#">{{offre.titre}}</a></h5>
+                    <h6><span class="badge ">Profil recherché:</span></h6>
+                    <p>
+                        {{offre.profilRecherche}}
+                    </p>
+                    <h6><span class="badge ">Salaire:</span></h6>
+                    <p>{{offre.salaire}}dt</p>
+                    <h6><span class="badge ">Type:</span></h6>
+                    <p>{{offre.type}}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</section>
+<div class="section-candidature" style="background-image:url(assets/slider-2-1.jpg) ;">
+    <div class="row">
+        <div class="col-lg-6 ">
+            <h3>Candidature Spontanée</h3>
+            <p>Proposez-nous votre candidature et si vos compétences correspondent à l’une de nos opportunités de poste, nos consultants vous contacteront dans les meilleurs délais.</p>
+        </div>
+            <div class="col-lg-6 ">
+            <button (click)="redirect('candidature');" type="button" id="submitButton" class="candidature-btn btn btn-contact-bg" >Candidature Spontanée</button>
+        </div>
+          
+    </div>
+</div>
+
+  

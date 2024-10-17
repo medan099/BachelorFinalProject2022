@@ -1,0 +1,80 @@
+<div class="bg-section"style="background-image: url(assets/page-title-background.jpg)">
+    <h2 class="page-title">Candidature spontanée</h2>
+  </div>
+  <div id="contact" class="contact-area section-padding">
+    <div class="container">										
+      <div class="section-title text-center">
+        <h1>Postulez directement en ligne</h1>
+        <p>Mezzo, centre de contact multicanal en Tunisie, recrute de nouveaux collaborateurs.<br>Que vous soyez débutants ou expérimentés, déposez votre candidature et profitez de nouvelles opportunités de carrière en intégrant une équipe jeune et dynamique. <br>Mezzo vous offre un environnement de travail idéal et vous permet de construire un véritable plan de carrière avec différentes possibilités d'évolution professionnelle.</p>
+      </div>					
+      <div class="row">
+        <div class="col-lg justify-content-center">	
+          <div class="contact">
+            <form class="form" name="enq" #addFor="ngForm" (ngSubmit)="onAddCandidature(addFor)"  >
+
+              <div class="row">
+                <div class="form-group col-md-6">
+                  <label for="Nom">Votre nom*</label>
+                  <input ngModel type="text" name="nom" class="form-control"  required="required">
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="Prénom">Votre prénom*</label>
+                    <input ngModel type="text" name="prenom" class="form-control"  required="required">
+                  </div>
+                <div class="form-group col-md-6">
+                    <label for="email">Votre adresse mail*</label>
+                    <input ngModel type="email" name="email" class="form-control"  required="required">
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="telephone">Votre numéro de téléphone*</label>
+                    <input ngModel type="text" name="telephone" class="form-control"  required="required">
+                </div>
+                <div class="form-group col-md-12">
+                    <label for="projetprofessionnel">Votre projet professionnel en quelques lignes</label>
+                    <textarea ngModel rows="8"  name="projetprofessionnel" class="form-control"  required="required"></textarea>
+                </div>
+                <div class="form-group col-md-6">
+                  <div *ngIf="currentFile" class="progress">
+                    <div
+                      class="progress-bar progress-bar-info progress-bar-striped"
+                      role="progressbar"
+                      attr.aria-valuenow="{{ progress }}"
+                      aria-valuemin="0"
+                      aria-valuemax="100"
+                      [ngStyle]="{ width: progress + '%' }"
+                    >
+                      {{ progress }}%
+                    </div>
+                  </div>
+                  <label class="btn btn-default">
+                    <input type="file" (change)="selectFile($event)" />
+                  </label>
+                  <button class="btn btn-upload-bg" [disabled]="!selectedFiles" (click)="upload()">
+                    Upload
+                  </button>
+           
+                  <div class="card">
+              
+                    <ul
+                      class="list-group list-group-flush"
+                      *ngFor="let file of fileInfos | async"
+                    >
+                      <li class="list-group-item">
+                      
+                        <a href="{{file.url}}" >{{ file.name }}</a>
+                      </li>
+                    </ul>
+                  </div>
+                  </div>
+                  
+                <div class="col-md-12 text-center">
+                  <div class="alert alert-success"  *ngIf='isSent' >{{sentMessage}} <i class="fa-solid fa-check"></i></div>
+                  <button *ngIf='!isSent'  [disabled]="addFor.invalid || !selectedFiles" type="submit" value="Postuler" name="submit" id="submitButton" class="btn btn-contact-bg" title="Postuler">Postuler</button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+    </div>
+</div>
+</div>

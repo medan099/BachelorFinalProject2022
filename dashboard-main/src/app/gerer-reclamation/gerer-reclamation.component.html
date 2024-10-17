@@ -1,0 +1,121 @@
+ 
+<div class="row " id="main-container" >
+    <div class="col-md-12 m-b-35">
+       <h3 class="title-5 m-b-35">Réclamations</h3>
+        <div class="overview-wrap  m-b-10">  
+          <form  class="form-header" >
+             <input class="au-input au-input--xl" type="search" (ngModelChange)="searchReclamations(key.value)" #key="ngModel" ngModel
+                name="key" id="searchName" placeholder="Chercher des réclamations..." required>
+        <button class="au-btn--submit" type="submit">
+          <i class="fa-solid fa-magnifying-glass"></i>
+        </button>
+    </form>
+ </div>
+ </div>
+<div class="table-responsive" id="proTeamScroll" tabindex="2" style="height: 400px; overflow: hidden; outline: none;">
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th>Nom</th>
+                                <th>Prenom</th>
+                                <th>Sujet</th> 
+                                <th>Email</th>
+                                <th>Tel</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody *ngFor="let reclamation of reclamations">
+                            <tr>
+                                <td> <h6 class="mb-0 font-13">{{reclamation?.nom}}</h6> </td>
+                                <td> <h6 class="mb-0 font-13">{{reclamation?.prenom}}</h6> </td>
+                                <td> <h6 class="mb-0 font-13">{{reclamation?.sujet}}</h6> </td>
+                               
+                                <td class="mb-0 font-13"><span class="block-email">{{reclamation?.email}}</span></td>
+                                <td class="mb-0 font-13">{{reclamation?.telephone}}</td>
+                              
+                             
+                                <td class="icons">
+                                  <a (click)="onOpenModal(reclamation, 'show')" class="tooltips"  data-toggle="tooltip show-icon" title="" data-original-title="show"><i class="fa-solid fa-magnifying-glass-plus"></i></a>
+                                  <a  href="mailto:{{reclamation?.email}}" data-toggle="tooltip" class="tooltips send-icon"  title="" data-original-title="Send"><i class="fa-solid fa-envelope"></i></a>
+                                    <a (click)="onOpenModal(reclamation, 'delete')" class="tooltips"  data-toggle="tooltip" title="" data-original-title="Delete"><i  class="far fa-trash-alt"></i></a>
+                                </td>
+                            </tr>
+                     
+                        </tbody>
+                    </table>
+                </div>
+            </div>    
+
+     <!-- Show Modal-->   
+     <div class="modal fade" id="loupeModal" tabindex="-1" role="dialog" aria-labelledby="showmodal" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content border-0">
+         <div class="modal-header bg-info text-white">
+          <h5 class="modal-title text-white" id="showmodal" >Réclamation</h5>
+               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+               <span aria-hidden="true">&times;</span>
+               </button>
+            </div>
+            <div class="modal-body">
+  
+                  <div class="form-group">
+                     <label for="nom"><strong>Nom: </strong></label>
+                    {{showReclamation?.nom}}
+                  </div>
+                  <div class="form-group">
+                  <label for="prenom"><strong>Prenom: </strong></label>
+                  {{showReclamation?.prenom}}
+                </div>
+                  <div class="form-group">
+                    <label for="sujet"><strong>Sujet: </strong></label>
+                    {{showReclamation?.sujet}}
+                   </div>
+                   <div class="form-group">
+                    <label for="message"><strong>Message: </strong></label>
+                    {{showReclamation?.message}}
+                   </div>
+                  <div class="form-group">
+                     <label for="email"><strong>Email: </strong></label>
+                     {{showReclamation?.email}}
+                      </div>
+                  <div class="form-group">
+                    <label for="telephone"><strong>Téléphone: </strong></label>
+                    {{showReclamation?.telephone}}
+                      </div>
+              
+  
+  
+            </div>
+         </div>
+      </div>
+    </div>
+    
+    
+    <!-- Delete Modal -->
+    <div class="modal fade" id="deleteReclamationModal" tabindex="-1" role="dialog" aria-labelledby="deleteModelLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content border-0">
+         <div class="modal-header bg-info text-white">
+          <h5 class="modal-title text-white" id="deleteModelLabel">Supprimer Message</h5>
+               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+               <span aria-hidden="true">&times;</span>
+               </button>
+            </div>
+            <div class="modal-body">
+               <p>Etes-vous sûrs de vouloir supprimer le message de Mr/Mme {{deleteReclamation?.nom}}?</p>
+               <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">No</button>
+                  <button (click)="onDeleteReclamation(deleteReclamation?.id)" class="btn btn-danger" data-dismiss="modal">Yes</button>
+               </div>
+            </div>
+         </div>
+      </div>
+    </div>
+   
+    <!-- Notification for no employees -->
+    <div *ngIf="reclamations?.length == 0" class="col-lg-12 col-md-12 col-xl-12">
+      <div class="alert alert-dark" role="alert">
+        <h4 class="alert-heading">NO Reclamations!</h4>
+        <p>No Reclamations were found.</p>
+      </div>
+      </div>

@@ -1,0 +1,55 @@
+<!-- MENU SIDEBAR-->
+<aside *ngIf="isLoggedIn" class="menu-sidebar d-none d-lg-block">
+  <div class="logo">
+      <a href="#">
+          <img src="assets\Logo_Mezzo.png" alt="Cool Admin" />
+      </a>
+  </div>
+  <div class="menu-sidebar__content js-scrollbar1">
+      <nav class="navbar-sidebar">
+          <ul class="list-unstyled navbar__list ">
+                <li  *ngIf="showAdminBoard || showModeratorBoard || showUserBoard">
+                    <a [routerLink]="['/board']" [routerLinkActive]="['is-active'] " >
+                        <i class="fas fa-tachometer-alt"></i>Tableau de bord</a>
+                </li>
+              <li *ngIf="isLoggedIn ">
+                <a [routerLink]="['/employees']" [routerLinkActive]="['is-active'] "  >
+                    <i class="fa-solid fa-user"></i>Employés</a>
+              </li>
+              <li  *ngIf="showAdminBoard">
+                <a [routerLink]="['/gerer-candidature']" [routerLinkActive]="['is-active'] ">
+                    <i class="fas fa-table"></i>Candidatures</a>
+              </li>
+         
+              <li  *ngIf="showAdminBoard">
+                <a [routerLink]="['/gerer-reclamation']" [routerLinkActive]="['is-active'] ">
+                    <i class="fa-solid fa-envelope"></i>Réclamations</a>
+              </li>
+              <li  *ngIf="isLoggedIn" >
+                <a [routerLink]="['/projets']" [routerLinkActive]="['is-active'] ">
+                    <i class="fa-solid fa-list-check"></i>Projets</a>
+              </li>
+              <li  *ngIf="isLoggedIn && !showUserBoard">
+                <a [routerLink]="['/gerer-actualite']" [routerLinkActive]="['is-active'] ">
+                    <i class="fa-solid fa-newspaper"></i>Actualités</a>
+              </li>
+              <li  *ngIf="isLoggedIn" >
+                <a [routerLink]="['/gerer-evenement']" [routerLinkActive]="['is-active'] ">
+                    <i class="fa-solid fa-bell"></i>Evénements</a>
+              </li>
+              <li  *ngIf="showAdminBoard || showModeratorBoard ">
+                <a [routerLink]="['/gerer-offre']" [routerLinkActive]="['is-active'] " >
+                    <i class="fas fa-table"></i>Offres d'emploi</a>
+              </li>
+            
+              <li  *ngIf="isLoggedIn ">
+                <a [routerLink]="['/chat']" [routerLinkActive]="['is-active'] ">
+                    <i class="fa-brands fa-rocketchat"></i>Discussion</a>
+              </li>
+              
+             
+          </ul>
+      </nav>
+  </div>
+</aside>
+ <!-- END MENU SIDEBAR-->

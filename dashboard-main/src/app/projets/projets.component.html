@@ -1,0 +1,161 @@
+<div class="row " id="main-container" >
+	<div class="col-md-12 m-b-35">
+	   <h3 class="title-5 m-b-35">Projets</h3>
+		<div class="overview-wrap m-b-10">   
+		  <form  class="form-header" >
+			 <input class="au-input au-input--xl" type="search" (ngModelChange)="searchProjets(key.value)" #key="ngModel" ngModel
+			 name="key" id="searchName5"  placeholder="Chercher des projets..." required/>
+			 <button class="au-btn--submit " type="submit">
+			   <i class="fa-solid fa-magnifying-glass"></i>
+			 </button>
+		 </form>
+		 <button href="#" class="au-btn au-btn-icon au-btn--blue" *ngIf="showModeratorBoard" (click)="onOpenModal(null, 'add')">
+			 <i class="fas fa-plus"></i> Nouveau projet</button>
+		</div>
+	</div>
+    
+	<div class="page-content container note-has-grid" >
+		<div class="tab-content bg-transparent">
+			<div id="note-full-container" class="note-has-grid row">
+				<div class="col-md-4 single-note-item all-category" *ngFor="let projet of projets" >
+					<div class="card card-body">
+						<span class="side-stick"></span> 
+						<span *ngIf="projet.statut=='Actif'" class="mb-2 badge badge-success badge-pill ">{{projet.statut}}</span>
+						<span *ngIf="projet.statut=='Suspendu'" class="mb-2 badge badge-secondary badge-pill ">{{projet.statut}}</span>
+						<span *ngIf="projet.statut=='Annulé'" class="mb-2 badge badge-danger badge-pill ">{{projet.statut}}</span>
+						<span *ngIf="projet.statut=='Nouveau'" class="mb-2 badge badge-warning badge-pill ">{{projet.statut}}</span>
+						<h5 class="note-title  mb-0" data-noteheading="Book a Ticket for Movie">{{projet.titre}} </h5>
+						<p class="note-date font-12 text-muted">{{projet.date}}</p>
+						<div class="note-content">
+							<div *ngIf="projet.statut=='Actif'" class="progress mb-1" style="height: 9px;">
+								<div class="progress-bar" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width: 50%;"></div>	
+							</div>
+							<p  *ngIf="projet.statut=='Actif'" class=" float-left mt-1">Progress : <span class="">50%</span></p>
+							<div *ngIf="projet.statut=='Annulé'" class="progress mb-1" style="height: 0px;">
+								<div  class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="0" style="width: 0%;"></div>	
+							</div>
+							<p *ngIf="projet.statut=='Annulé'" class=" float-left mt-1 text-muted">Projet annulé </p>
+							<div *ngIf="projet.statut=='Suspendu'" class="progress mb-1" style="height: 9px;">
+								<div  class="progress-bar" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style="width: 20%;"></div>	
+							</div>
+							<p *ngIf="projet.statut=='Suspendu'" class=" float-left mt-1">Progress : <span class="">20%</span></p>
+							<div *ngIf="projet.statut=='Nouveau'" class="progress mb-1" style="height: 9px;">
+								<div  class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%;"></div>	
+							</div>
+							<p *ngIf="projet.statut=='Nouveau'" class=" float-left mt-1">Progress : <span class="">0%</span></p>
+						</div>
+						<div class=" float-right btn-group btn-group-sm">
+							<a  *ngIf="showModeratorBoard  " (click)="onOpenModal(projet, 'edit')" class="btn btn-primary " data-placement="top" data-original-title="Edit"><i class="fa fa-pencil"></i> </a>
+							<a  *ngIf="showModeratorBoard  " (click)="onOpenModal(projet, 'delete')" class="btn btn-secondary " data-placement="top" data-original-title="Delete"><i class="fa-solid fa-trash-can"></i></a>
+						 </div>
+					</div>
+				</div>
+			</div>
+		</div>
+</div>
+    
+    <!-- Add Offre Modal -->
+    <div class="modal fade" id="addProjetModal" tabindex="-1" role="dialog" aria-labelledby="addModalLabel" aria-hidden="true">
+		<div class="modal-dialog modal-dialog-centered" role="document">
+		  <div class="modal-content border-0">
+			 <div class="modal-header bg-info text-white">
+				<h5 class="modal-title text-white" id="addModalLabel">Ajouter Projet</h5>
+				<button type="button" class="close text-white" data-dismiss="modal" aria-label="Close">
+				<span aria-hidden="true">&times;</span>
+				</button>
+			 </div>
+			 <div class="modal-body">
+				<div class="notes-box">
+					<div class="notes-content">
+				<form #addForm="ngForm" (ngSubmit)="onAddProjets(addForm)">
+				<div class="form-group">
+				   <label for="titre">Titre</label>
+				   <input type="text" ngModel name="titre" class="form-control" id="titre" placeholder="Titre" required>
+				</div>
+				<div class="form-group">
+					<label for="statut">Statut</label>
+				   <input type="text" ngModel name="statut" class="form-control" id="statut" placeholder="Statut" required>
+				</div>
+			  <div class="form-group">
+				<label for="date">Date</label>
+				  <input type="text" ngModel name="date" class="form-control" id="date" placeholder="Date" required>
+			   </div>
+			
+				<div class="modal-footer">
+				   <button type="button" id="add-projet-form" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
+				   <button type="submit" class="btn btn-primary" >Enregistrer</button>
+				</div>
+				</form>
+			</div>
+		</div>
+			 </div>
+		  </div>
+		</div>
+		</div>
+	  
+	  <!-- Edit Modal -->
+	  <div class="modal fade" id="updateProjetModal" tabindex="-1" role="dialog" aria-labelledby="EditModalLabel" aria-hidden="true">
+		<div class="modal-dialog modal-dialog-centered" role="document">
+		   <div class="modal-content border-0">
+			  <div class="modal-header bg-info text-white">
+				 <h5 class="modal-title text-white" id="EditModalLabel">Modifier Projet {{editProjets?.titre}}</h5>
+				 <button type="button" class="close text-white" data-dismiss="modal" aria-label="Close">
+				 <span aria-hidden="true">&times;</span>
+				 </button>
+			  </div>
+			  <div class="modal-body">
+				 <form #editForm="ngForm">
+					<div class="form-group">
+					   <label for="titre">Titre</label>
+					   <input type="text" ngModel="{{editProjets?.titre}}" name="titre" class="form-control" id="titre" aria-describedby="profilRechercheHelp" placeholder="titre">
+					</div>
+					<input type="hidden" ngModel="{{editProjets?.id}}" name="id" class="form-control" id="id" placeholder="id">
+				   
+					<div class="form-group">
+					   <label for="statut">Statut</label>
+					   <input type="text" ngModel="{{editProjets?.statut}}" name="statut" class="form-control" id="statut" placeholder="Statut">
+					</div>
+					<div class="form-group">
+					   <label for="date">Date</label>
+					   <input type="text" ngModel="{{editProjets?.date}}" name="date" class="form-control" id="date" placeholder="Date">
+					</div>
+				  
+					<div class="modal-footer">
+					   <button type="button" id="" data-dismiss="modal" class="btn btn-secondary">Fermer</button>
+					   <button (click)="onUpdateProjets(editForm.value)" data-dismiss="modal" class="btn btn-primary" >Enregistrer</button>
+					</div>
+				 </form>
+			  </div>
+		   </div>
+		</div>
+	  </div>
+	  
+	  <!-- Delete Modal -->
+	  <div class="modal fade" id="deleteProjetModal" tabindex="-1" role="dialog" aria-labelledby="deleteModelLabel" aria-hidden="true">
+		<div class="modal-dialog modal-dialog-centered" role="document">
+		   <div class="modal-content border-0" >
+			  <div class="modal-header bg-info text-white">
+				 <h5 class="modal-title text-white" id="deleteModelLabel">Supprimer Projet</h5>
+				 <button type="button" class="close text-white" data-dismiss="modal" aria-label="Close">
+				 <span aria-hidden="true">&times;</span>
+				 </button>
+			  </div>
+			  <div class="modal-body">
+				 <p>Etes-vous sûrs de vouloir supprimer le projet {{deleteProjets?.titre}}?</p>
+				 <div class="modal-footer">
+					<button type="button" class="btn btn-secondary" data-dismiss="modal">No</button>
+					<button (click)="onDeleteProjets(deleteProjets?.id)" class="btn btn-danger" data-dismiss="modal">Yes</button>
+				 </div>
+			  </div>
+		   </div>
+		</div>
+	  </div>
+	 
+	  
+	  <!-- Notification for no offres -->
+	  <div *ngIf="projets?.length == 0" class="col-lg-12 col-md-12 col-xl-12">
+	  <div class="alert alert-dark" role="alert">
+		<h4 class="alert-heading">Pas de Projets!</h4>
+		<p>Aucun projet trouvé.</p>
+	  </div>
+	  </div>

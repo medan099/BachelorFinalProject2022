@@ -1,0 +1,47 @@
+  <!-- HEADER DESKTOP-->
+   <header *ngIf="isLoggedIn" class="header-desktop">
+       <div class="section__content section__content--p30">
+           <div class="container-fluid">
+               <div class="header-wrap justify-content-end ">
+                   <div class="header-button">
+                       <div class="noti-wrap">
+                           <div class="noti__item js-item-menu">
+                             <a routerLink="chat">
+                                 <i class="fa-solid fa-comment-dots"></i></a>
+                           </div>
+                           <div class="noti__item js-item-menu">
+                            <a routerLink="gerer-reclamation">
+                              <i class="fa-solid fa-envelope"></i>
+                            </a>
+                           </div>
+                           <div class="noti__item js-item-menu">
+                            <a routerLink="gerer-evenement">
+                              <i class="fa-solid fa-bell"></i> 
+                            </a>
+                           </div>
+                       </div>
+                       <div class="account-wrap">
+                           <div class="account-item clearfix js-item-menu">
+                            <a class="nav-link " href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <img src="{{imageUrl}}" alt="" class="img-fluid rounded-circle ">
+                                 {{ username }}
+                              </a>
+                              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a *ngIf="isLoggedIn" class="dropdown-item" href="/profile"><i class="fa-solid fa-user"></i>  Mon Profil</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" *ngIf="isLoggedIn" href="#" (click)="logout()"><i class="fa-solid fa-power-off"></i> Se déconnecter</a>
+                              </div>
+                                 
+                                  
+                               </div>
+                           </div>
+                       </div>
+                   </div>
+
+
+                </div>
+            </div>
+   </header>         
+  
+   <!-- HEADER DESKTOP-->
+

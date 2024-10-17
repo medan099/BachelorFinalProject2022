@@ -1,0 +1,66 @@
+
+<nav id="navbar" class="navbar sticky-top navbar-expand-lg navbar-dark" >
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">
+      <img src="assets/Logo_Mezzo.png" id="logo" class="img-responsive" routerLink="/" alt="Logo"> 
+    </a>
+    <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="menu-icon-bar"></span>
+      <span class="menu-icon-bar"></span>
+      <span class="menu-icon-bar"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+      <ul class="navbar-nav topnav-centered">
+        <li class="nav-item dropdown">
+          <a class="nav-link menu-link" href="#" [routerLink]="['home']" routerLinkActive="active" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            MEZZO
+          </a>
+          <ul class="dropdown-menu show " aria-labelledby="navbarDropdownMenuLink">
+            <li><a class="dropdown-item " href="#" [routerLink]="['histoire']" routerLinkActive="active">Notre Histoire</a></li>
+            <li><a class="dropdown-item " href="#" [routerLink]="['valeur']" routerLinkActive="active">Nos Valeurs</a></li>
+            <li><a class="dropdown-item " href="#" [routerLink]="['chiffre']" routerLinkActive="active">Nos chiffres</a></li>
+            <li><a class="dropdown-item " href="#" [routerLink]="['team']" routerLinkActive="active">Team MEZZO</a></li>
+          </ul>
+        </li> 
+        <li class="nav-item dropdown">
+          <a class="nav-link menu-link" href="#" [routerLink]="['expertise']" routerLinkActive="active" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Nos Pôles d'Expertise
+          </a>
+          <ul class="dropdown-menu show" aria-labelledby="navbarDropdownMenuLink">
+            <li><a class="dropdown-item " href="#" [routerLink]="['home']" routerLinkActive="active">Mezzo RC</a></li>
+            <li><a class="dropdown-item " href="#" [routerLink]="['histoire']" routerLinkActive="active">Mezzo Premium</a></li>
+            <li><a class="dropdown-item " href="#" [routerLink]="['home']" routerLinkActive="active">Mezzo Solutions</a></li>
+          </ul>
+        </li> 
+        <li class="nav-item dropdown">
+          <a class="nav-link menu-link" href="#" [routerLink]="['services']" routerLinkActive="active" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Vos Besoins
+          </a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link menu-link" [routerLink]="['actualite']" routerLinkActive="active" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Nos Actualités
+          </a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link menu-link" href="#" [routerLink]="['contact']" routerLinkActive="active" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Nous Rejoindre
+          </a>
+          <ul class="dropdown-menu show" aria-labelledby="navbarDropdownMenuLink">
+            <li><a class="dropdown-item" href="#" [routerLink]="['contact']" routerLinkActive="active">Contact</a></li>
+            <li><a class="dropdown-item" href="#" [routerLink]="['offre']" routerLinkActive="active">Intégrer Mezzo</a></li>
+            <li><a class="dropdown-item" href="#" [routerLink]="['candidature']" routerLinkActive="active">Candidature spontanée</a></li>
+          </ul>
+        </li>
+      </ul>
+      <ul class="nav navbar-nav nav-icons ">
+        <li><a  href="https://fr-fr.facebook.com/somezzo.tn/"><i id="icon" class="fa-brands social-icon nav-icon fa-facebook-f"></i></a></li>
+        <li><a  href="https://fr.linkedin.com/company/mezzo_2"><i id="icon" class="fa-brands social-icon nav-icon fa-linkedin-in"></i></a></li>
+        <li><a  href="https://www.instagram.com/mezzo.tunis/?hl=fr"><i id="icon" class="fa-brands social-icon nav-icon fa-instagram"></i></a></li>
+        <li><a  href="https://mobile.twitter.com/mezzorc"><i id="icon" class="fa-brands social-icon nav-icon fa-twitter"></i></a></li>
+        <li><a  href="#"><i id="icon" class="fa-solid  social-icon fa-magnifying-glass search-icon"></i></a></li>
+      </ul>
+      
+    </div>
+  </div>
+</nav>

@@ -1,0 +1,202 @@
+*{
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+  }
+/* Title section */
+    
+.bg-section{
+    background-size: cover;
+    height: 50vh;
+    min-height: 80px;
+  }
+.bg-section h2{
+    padding-top: 9% ;
+    font-weight: 600;
+    font-size: 3rem;
+    max-width: 20ch;
+    color:#ffffff;
+    margin: auto ;
+    margin-left: 4%;
+  }
+
+#contact{
+  padding-top:5%;
+  padding-bottom: 7%;
+  background:#eee;
+}
+
+
+/*======= Contact ======*/
+
+  @media only screen and (max-width:768px) {
+      .contact {
+          margin-bottom: 60px;
+      }
+  }
+  
+  .contact input {
+      background: #fff;
+      border: 1px solid #fff;
+      border-radius: 3px;
+      -webkit-box-shadow: none;
+      box-shadow: none;
+      color: #232434;
+      font-size: 16px;
+      height: 60px;
+      padding: 10px;
+      width: 100%;
+      font-family: 'poppins', sans-serif;
+      padding-left: 30px;
+      -webkit-transition: all 0.3s ease 0s;
+      -o-transition: all 0.3s ease 0s;
+      transition: all 0.3s ease 0s;
+      margin-bottom: 1rem;
+  }
+  
+  .contact textarea {
+      background: #fff;
+      border: 1px solid #fff;
+      border-radius: 3px;
+      -webkit-box-shadow: none;
+      box-shadow: none;
+      color: #232434;
+      font-size: 16px;
+      padding: 10px;
+      width: 100%;
+      font-family: 'poppins', sans-serif;
+      padding-left: 30px;
+      -webkit-transition: all 0.3s ease 0s;
+      -o-transition: all 0.3s ease 0s;
+      transition: all 0.3s ease 0s;
+      margin-bottom: 1rem;
+  }
+  
+  .contact input:focus {
+      background: #fff;
+      border: 1px solid #fff;
+      color: #232434;
+      -webkit-box-shadow: none;
+      box-shadow: none;
+      outline: 0 none;
+  }
+  
+  .contact textarea:focus {
+      background: #fff;
+      border: 1px solid #fff;
+      color: #232434;
+      -webkit-box-shadow: none;
+      box-shadow: none;
+      outline: 0 none;
+  }
+  
+  .form-control::placeholder {
+      color: #232434;
+      opacity: 1;
+  }
+  
+  .btn-contact-bg {
+      border-radius: 30px;
+      color: #fff;
+      outline: medium none !important;
+      padding: 15px 27px;
+      text-transform: capitalize;
+      -webkit-transition: all 0.3s ease 0s;
+      -o-transition: all 0.3s ease 0s;
+      transition: all 0.3s ease 0s;
+      background: #36486b;
+      font-family: 'poppins', sans-serif;
+      cursor: pointer;
+      width: 100%;
+  }
+  .alert{
+    background: #36486b;
+    color: #fff;
+    border-radius: 30px;
+  }
+  .btn-contact-bg:hover,
+  .btn-contact-bg:focus {
+     opacity: 0.9;
+     
+  }
+  
+  /*START ADDRESS*/
+  
+  .single_address {
+      overflow: hidden;
+      margin-bottom: 10px;
+      padding-left: 40px;
+  }
+  
+  @media only screen and (max-width:768px) {
+      .single_address {
+          padding-left: 0px;
+      }
+  }
+  
+  .single_address i {
+      background: #f6f6f6;
+      color: #20247b;
+      border-radius: 30px;
+      width: 60px;
+      height: 60px;
+      line-height: 60px;
+      text-align: center;
+      float: left;
+      margin-right: 14px;
+      font-size: 22px;
+      -webkit-box-shadow: 0 5px 30px 0 rgba(0, 0, 0, 0.1);
+      box-shadow: 0 5px 30px 0 rgba(0, 0, 0, 0.1);
+      margin-bottom: 20px;
+      -webkit-transition: all 0.3s ease 0s;
+      -o-transition: all 0.3s ease 0s;
+      transition: all 0.3s ease 0s;
+  }
+  
+  .single_address:hover i {
+      background: #36486b;
+      color: #fff;
+  }
+  
+  .single_address h4 {
+    margin-top: 0.6rem;
+      font-size: 18px;
+      margin-bottom: 0px;
+      overflow: hidden;
+      font-weight: 600;
+      color:#20247b;
+  }
+  
+  .single_address p {
+      overflow: hidden;
+      margin-top: 5px;
+  }
+  .single_address p strong{
+    color:steelblue;
+  }
+  .single_address ul{
+    overflow: hidden;
+    margin-top: 5px;
+    list-style: none;
+  }
+  
+  .section-title h1 {
+      font-size: 44px;
+      font-weight: 500;
+      margin-top: 0;
+      position: relative;
+      text-transform: capitalize;
+      margin-bottom: 16px;
+      color: #20247b;
+  }
+  .section-title p {
+      padding: 0 10px;
+      width: 85%;
+      margin: auto;
+      letter-spacing: 1px;
+  }
+  .section-title {
+      margin-bottom: 80px;
+  }
+  .text-center {
+      text-align: center!important;
+  }

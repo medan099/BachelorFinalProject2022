@@ -1,0 +1,156 @@
+
+  <div class="row " id="main-container" >
+   <div class="col-md-12 m-b-35">
+      <h3 class="title-5 m-b-35">Offre d'emploi</h3>
+       <div class="overview-wrap m-b-10">   
+         <form  class="form-header" >
+            <input class="au-input au-input--xl" type="search" (ngModelChange)="searchOffres(key5.value)" #key5="ngModel" ngModel
+            name="key5" id="searchName5"  placeholder="Chercher des offres..." required/>
+            <button class="au-btn--submit" type="submit">
+              <i class="fa-solid fa-magnifying-glass"></i>
+            </button>
+        </form>
+           <button class="au-btn au-btn-icon au-btn--blue" *ngIf="showModeratorBoard" (click)="onOpenModal(null, 'add')">
+            <i class="fa-solid fa-plus"></i> Ajouter Offre
+           </button>
+       </div>
+   </div>
+  
+     <div *ngFor="let offre of offres" class="container">
+      <div class="card mb-3">
+        <div class="card-body">
+          <div class="d-flex flex-column flex-lg-row">
+            <img class="avatar me-4 image-offre" src="assets/recr.jpg" alt="">
+            <div class="row flex-fill">
+              <div class="col-lg-7 col-sm-5">
+                <h4 class="h5">{{offre?.titre}}</h4>
+                <p><span class="badge bg-secondary">Profil recherché:</span> {{offre.profilRecherche}}</p>
+                <p><span class="badge bg-secondary">Type:</span> {{offre.type}}</p>
+                <p><span class="badge bg-secondary">Salaire:</span> {{offre.salaire}}</p>
+              
+              </div>
+            </div>
+          </div>
+          <div class="float-right btn-group btn-group-sm">
+            <a  *ngIf="showModeratorBoard  " (click)="onOpenModal(offre, 'edit')" class="btn btn-primary tooltips" data-placement="top" data-original-title="Edit"><i class="fa fa-pencil"></i> </a>
+            <a  *ngIf="showModeratorBoard  " (click)="onOpenModal(offre, 'delete')" class="btn btn-secondary tooltips" data-placement="top" data-original-title="Delete"><i class="fa fa-times"></i></a>
+         </div>
+        </div>
+       </div>
+      </div>
+      
+    </div>
+ 
+    
+    <!-- Add Offre Modal -->
+    <div class="modal fade" id="addOffreModal" tabindex="-1" role="dialog" aria-labelledby="addOffreModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+         <div class="modal-content border-0">
+           <div class="modal-header bg-info text-white">
+             <h5 class="modal-title text-white" id="addOffreModalLabel">Ajouter Offre</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+              </button>
+           </div>
+           <div class="modal-body">
+              <form #addForm="ngForm" (ngSubmit)="onAddOffre(addForm)">
+              <div class="form-group">
+                 <label for="titre">Titre</label>
+                 <input type="text" ngModel name="titre" class="form-control" id="titre" placeholder="Titre" required>
+              </div>
+              <div class="form-group">
+                 <label for="profilRecherche">Profil Recherché</label>
+                 <input type="text" ngModel name="profilRecherche" class="form-control" id="profilRecherche" placeholder="profilRecherche" required>
+              </div>
+              <div class="form-group">
+               <label for="type">Type</label>
+               <input type="text" ngModel name="type" class="form-control" id="type" placeholder="Type" required>
+            </div>
+              <div class="form-group">
+                <label for="salaire">Salaire</label>
+                <input type="number" ngModel name="salaire" class="form-control" id="salaire" placeholder="salaire" required>
+             </div>
+          
+              <div class="modal-footer">
+                 <button type="button" id="add-offre-form" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
+                 <button type="submit" class="btn btn-primary" >Enregistrer</button>
+              </div>
+              </form>
+           </div>
+        </div>
+      </div>
+      </div>
+    
+    <!-- Edit Modal -->
+    <div class="modal fade" id="updateOffreModal" tabindex="-1" role="dialog" aria-labelledby="offreEditModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+         <div class="modal-content border-0">
+           <div class="modal-header bg-info text-white">
+             <h5 class="modal-title text-white" id="updateOffreModalLabel">Modifier Offre {{editOffre?.titre}}</h5>
+               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+               <span aria-hidden="true">&times;</span>
+               </button>
+            </div>
+            <div class="modal-body">
+               <form #editForm="ngForm">
+                  <div class="form-group">
+                     <label for="titre">Titre</label>
+                     <input type="text" ngModel="{{editOffre?.titre}}" name="titre" class="form-control" id="titre" aria-describedby="profilRechercheHelp" placeholder="titre">
+                  </div>
+                  <input type="hidden" ngModel="{{editOffre?.id}}" name="id" class="form-control" id="id" placeholder="Email">
+                 
+                  <div class="form-group">
+                     <label for="profilRecherche">Profil Recherché</label>
+                     <input type="text" ngModel="{{editOffre?.profilRecherche}}" name="profilRecherche" class="form-control" id="profilRecherche" placeholder="profilRecherche">
+                  </div>
+                  <div class="form-group">
+                     <label for="type">Type</label>
+                     <input type="text" ngModel="{{editOffre?.type}}" name="type" class="form-control" id="type" placeholder="Type">
+                  </div>
+
+                  <div class="form-group">
+                    <label for="salaire">Salaire</label>
+                    <input type="text" ngModel="{{editOffre?.salaire}}" name="salaire" class="form-control" id="salaire" placeholder="salaire">
+                 </div>
+              
+                
+                  <div class="modal-footer">
+                     <button type="button" id="" data-dismiss="modal" class="btn btn-secondary">Fermer</button>
+                     <button (click)="onUpdateOffre(editForm.value)" data-dismiss="modal" class="btn btn-primary" >Enregistrer</button>
+                  </div>
+               </form>
+            </div>
+         </div>
+      </div>
+    </div>
+    
+    <!-- Delete Modal -->
+    <div class="modal fade" id="deleteOffreModal" tabindex="-1" role="dialog" aria-labelledby="deleteModelLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+         <div class="modal-content border-0">
+           <div class="modal-header bg-info text-white">
+             <h5 class="modal-title text-white" id="deleteModelLabel">Supprimer Offre</h5>
+               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+               <span aria-hidden="true">&times;</span>
+               </button>
+            </div>
+            <div class="modal-body">
+               <p>Etes-vous sûrs de vouloir supprimer l'offre {{deleteOffre?.titre}}?</p>
+               <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">No</button>
+                  <button (click)="onDeleteOffre(deleteOffre?.id)" class="btn btn-danger" data-dismiss="modal">Yes</button>
+               </div>
+            </div>
+         </div>
+      </div>
+    </div>
+   
+    
+    <!-- Notification for no offres -->
+    <div *ngIf="offres?.length == 0" class="col-lg-12 col-md-12 col-xl-12">
+    <div class="alert alert-dark" role="alert">
+      <h4 class="alert-heading">NO Offres!</h4>
+      <p>No Offres were found.</p>
+    </div>
+    </div>
+    
